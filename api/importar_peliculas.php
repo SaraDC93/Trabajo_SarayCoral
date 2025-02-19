@@ -43,7 +43,18 @@ try {
                 // Insertar la película en la base de datos
                 $stmt = $pdo->prepare("INSERT INTO peliculas (id_tmdb, titulo, descripcion, poster) VALUES (?, ?, ?, ?)");
                 $stmt->execute([$id_tmdb, $titulo, $descripcion, $poster]);
-                echo "✅ Película añadida: $titulo <br>";
+
+                // Obtener el ID de la película recién insertada
+                $pelicula_id = $pdo->lastInsertId();
+
+                // Asignar una cantidad disponible predeterminada (por ejemplo, 2)
+                $cantidad_disponible = 2;
+
+                // Insertar el registro en `inventario_peliculas`
+                $stmt = $pdo->prepare("INSERT INTO inventario_peliculas (pelicula_id, cantidad_disponible) VALUES (?, ?)");
+                $stmt->execute([$pelicula_id, $cantidad_disponible]);
+
+                echo "✅ Película añadida: $titulo (Cantidad disponible: $cantidad_disponible) <br>";
             } else {
                 echo "⚠️ Película ya existe: $titulo <br>";
             }

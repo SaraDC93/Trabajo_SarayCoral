@@ -3,6 +3,15 @@ let token = localStorage.getItem("token");
 let role = localStorage.getItem("role");
 let username = localStorage.getItem("username");
 
+console.log("main.js cargado correctamente");
+
+document.addEventListener("DOMContentLoaded", () => {
+    const registerButton = document.getElementById("register");
+    if(registerButton) {
+        registerButton.addEventListener("click", register);
+    }
+});
+
 // FUNCION REGISTRO
 async function register() {
     const name = document.getElementById('register-name').value;
