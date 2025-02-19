@@ -1,0 +1,37 @@
+/Trabajo_SarayCoral
+│── /api
+│   ├── alquileres.php         <-- Manejo de alquileres
+│   ├── config.php             <-- Archivo de configuración (base de datos)
+│   ├── database.php           <-- Conexión a la base de datos
+│   ├── error.log              <-- Archivo de registro de errores
+│   ├── importar_peliculas.php <-- Importación de películas
+│   ├── index.php              <-- Punto de entrada a la API
+│   ├── jwt_utils.php          <-- Funciones de JWT
+│   ├── login.php              <-- Manejo de inicio de sesión
+│   ├── peliculas.php          <-- Manejo de películas
+│   ├── register.php           <-- Manejo de registro de usuarios
+│   ├── resenas.php            <-- Manejo de reseñas
+│
+│── /css
+│   ├── styles.css             <-- Estilos para el frontend
+│
+│── /imagen
+│   ├── pasillo.jpg            <-- Imagen de referencia
+│
+│── /js
+│   ├── main.js                <-- Funciones JavaScript para el frontend
+│
+│── /public
+│── inicio.html                <-- Página de inicio del frontend
+│── index.html                 <-- Página de login del frontend
+│── register.html              <-- Página de registro del frontend
+│
+│── /sql
+│   ├── schema.sql             <-- Esquema de la base de datos
+│
+│── /vendor                    <-- Dependencias de Composer
+│
+│── .env                       <-- Archivo de configuración de variables de entorno
+│── composer.json              <-- Dependencias de Composer
+│── composer.lock              <-- Archivo de bloqueo para las dependencias
+│── estructura.txt             <-- Documento con la estructura del proyecto

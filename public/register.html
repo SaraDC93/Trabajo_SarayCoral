@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Videoclub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="container">
+        <h1>Videoclub</h1>
+
+        <div class="auth-form">
+            <h2>Registro</h2>
+            <form>
+                <label for="register-name">Nombre</label>
+                <input type="text" id="register-name" placeholder="Nombre" required>
+
+                <label for="register-email">Correo</label>
+                <input type="email" id="register-email" placeholder="Correo" required>
+
+                <label for="register-password">Contraseña</label>
+                <input type="password" id="register-password" placeholder="Contraseña" required>
+
+                <button type="button" onclick="register()">Registrarse</button>
+            </form>
+
+            <p>¿Ya tienes cuenta? <a href="index.html">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

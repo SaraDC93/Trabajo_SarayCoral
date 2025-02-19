@@ -1,0 +1,197 @@
+/* Fondo de pantalla */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('../imagen/pasillo.jpg') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Contenedor centrado */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+/* Títulos */
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+/* Formulario */
+.auth-form {
+    width: 100%;
+}
+
+/* Inputs */
+.auth-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Botón */
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-form button:hover {
+    background-color: #FF4500;
+}
+
+/* Links */
+.auth-form p {
+    margin-top: 15px;
+}
+
+.auth-form a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Pagina de inicio */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el encabezado */
+header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Buscador */
+#search-bar {
+    width: 60%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Contenedor de películas */
+.lista-peliculas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Estilos para cada película */
+.pelicula {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.pelicula:hover {
+    transform: scale(1.05);
+}
+
+.pelicula img {
+    width: 100px; /* Imagen más pequeña */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Botón de cerrar sesión 
+button {
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+*/
+button:hover {
+    background: #ff1e3c;
+}
+
+/* Contenedor de botones en cada película */
+.botones-container {
+    display: flex;
+    flex-direction: column; /* Apila los botones verticalmente */
+    gap: 10px; /* Espaciado entre botones */
+    margin-top: 10px;
+}
+
+/* Estilos para los botones de Alquilar y Agregar Reseña */
+.pelicula button {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    padding: 8px;
+    font-size: 14px;
+    background-color: #FF6347;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.pelicula button:hover {
+    background-color: #FF4500;
+}
+
+/* Espaciado adicional para el textarea */
+.pelicula textarea {
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
