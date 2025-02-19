@@ -102,8 +102,9 @@ INSERT INTO peliculas (titulo, descripcion, poster) VALUES
 ('El Hobbit: La desolación de Smaug', 'Bilbo y los enanos continúan su viaje hacia la Montaña Solitaria.', 'https://image.tmdb.org/t/p/w500/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg'),
 ('El Hobbit: La batalla de los cinco ejércitos', 'Las fuerzas de la oscuridad y la luz se enfrentan en una batalla épica.', 'https://image.tmdb.org/t/p/w500/8Qsr8pvDL3s1jNZQ4HK1d1Xlvnh.jpg'),
 
-
-
 -- Película de Transformers
 ('Transformers: El último caballero', 'Los humanos están en guerra con los Transformers, y la clave para salvar el futuro yace en los secretos del pasado.', 'https://image.tmdb.org/t/p/w500/6TjllWT3cGrPFyqDXurVZ3L8bBi.jpg'),
 
+('Joker', 'Un comediante fracasado se adentra en el mundo del crimen y el caos en la ciudad de Gotham.',
+'https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg'),
+('Spider-Man: No Way Home', 'Peter Parker desenmascara a Spider-Man y solicita la ayuda del Doctor Strange para restaurar su secreto, pero algo sale mal.', 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg');
