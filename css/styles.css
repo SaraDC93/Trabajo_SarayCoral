@@ -65,7 +65,7 @@ button:hover {
 
 /* Estilos específicos para inicio.html */
 header {
-    background-color: antiquewhite;
+    background-color: lightgray;
     color: white;
     text-align: center;
     padding: 20px;
@@ -112,42 +112,150 @@ main {
     align-items: center;
 }
 
-#search-bar {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    text-align: center;
-}
+/* Mantén los estilos anteriores de header, body, etc. y actualiza/añade estos */
 
 .lista-peliculas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
     justify-content: center;
-    align-items: center;
-    margin-top: 20px;
     width: 100%;
     max-width: 1200px;
+    padding: 20px;
 }
 
 .pelicula {
     background: white;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.2s ease;
+    min-height: 600px;
+}
+
+.pelicula:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .pelicula img {
     width: 100%;
-    max-height: 300px;
+    height: 350px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.pelicula h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.pelicula p {
+    color: #666;
+    line-height: 1.6;
+    margin: 10px 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.pelicula button {
+    background: linear-gradient(45deg, #007bff, #00a1ff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    margin: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: auto;
+    min-width: 120px;
+}
+
+.pelicula button:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+    transform: scale(1.05);
+}
+
+/* Estilos para las reseñas */
+.resena-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.resena-form textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.resena-form select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* Mensaje de alquilada */
+.alquilada-msg {
+    color: #28a745;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Contenedor de reseñas */
+[id^="resenas-"] {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+[id^="resenas-"] h4 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+[id^="resenas-"] p {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    margin: 5px 0;
+}
+
+/* Estilos específicos para la búsqueda */
+#search-bar {
+    width: 50%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    display: block;
+}
+
+#search-bar:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    border-color: #0056b3;
 }
 
 #logout {
