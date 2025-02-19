@@ -137,6 +137,20 @@ async function getPeliculas() {
     }
 }
 
+// FUNCION DE BÚSQUEDA DE PELÍCULAS
+function buscarPelicula() {
+    const searchBar = document.getElementById("search-bar");
+    searchBar.addEventListener("keyup", () => {
+        const searchQuery = document.getElementById("search-bar").value.toLowerCase();
+        const peliculas = document.querySelectorAll(".pelicula");
+    
+        peliculas.forEach(pelicula => {
+            const titulo = pelicula.querySelector("h3").textContent.toLowerCase();
+            pelicula.style.display = titulo.includes(searchQuery) ? "block" : "none";
+        });
+    });
+}
+
 // FUNCION ALQUILAR PELÍCULA
 async function alquilarPelicula(peliculaId) {
     try {
