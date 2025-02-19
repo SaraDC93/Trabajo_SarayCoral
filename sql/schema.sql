@@ -25,7 +25,7 @@ CREATE TABLE peliculas (
 -- Crear tabla de Inventario de Películas
 CREATE TABLE inventario_peliculas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    pelicula_id INT NOT NULL,
+    pelicula_id INT NOT NULL UNIQUE,  -- Restricción única añadida aquí
     cantidad_disponible INT NOT NULL DEFAULT 1,
     FOREIGN KEY (pelicula_id) REFERENCES peliculas(id) ON DELETE CASCADE
 );
@@ -53,6 +53,7 @@ CREATE TABLE resenas (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
     FOREIGN KEY (pelicula_id) REFERENCES peliculas(id) ON DELETE CASCADE
 );
+
 
 DELIMITER $$
 
@@ -106,58 +107,3 @@ INSERT INTO peliculas (titulo, descripcion, poster) VALUES
 -- Película de Transformers
 ('Transformers: El último caballero', 'Los humanos están en guerra con los Transformers, y la clave para salvar el futuro yace en los secretos del pasado.', 'https://image.tmdb.org/t/p/w500/6TjllWT3cGrPFyqDXurVZ3L8bBi.jpg'),
 
-
--- Inserciones para la tabla inventario_peliculas
-INSERT INTO inventario_peliculas (pelicula_id, cantidad_disponible) VALUES
-(1, 3),
-(2, 2),
-(3, 1),
-(4, 4),
-(5, 5),
-(6, 2),
-(7, 2),
-(8, 2),
-(9, 3),
-(10, 2),
-(11, 4),
-(12, 3),
-(13, 2),
-(14, 1),
-(15, 1),
-(16, 4),
-(17, 4),
-(18, 4),
-(19, 1),
-(20, 3),
-(22, 2),
-(23, 2),
-(25, 2),
-(27, 2),
-(29, 2),
-(31, 3),
-(32, 2),
-(33, 4),
-(34, 1),
-(36, 3),
-(37, 2),
-(39, 4),
-(40, 4),
-(42, 3),
-(43, 3),
-(44, 3),
-(45, 2),
-(46, 5),
-(49, 0),
-(50, 3),
-(51, 2),
-(52, 2),
-(53, 2),
-(54, 2),
-(60, 3),
-(72, 3),
-(73, 2),
-(74, 1),
-(75, 3),
-(76, 2),
-(77, 1),
-(78, 3);
