@@ -54,6 +54,22 @@ CREATE TABLE resenas (
     FOREIGN KEY (pelicula_id) REFERENCES peliculas(id) ON DELETE CASCADE
 );
 
+DELIMITER $$
+
+CREATE TRIGGER after_peliculas_insert
+AFTER INSERT ON peliculas
+FOR EACH ROW
+BEGIN
+    -- Asignar una cantidad disponible predeterminada (por ejemplo, 2)
+    DECLARE cantidad_disponible INT DEFAULT 2;
+
+    -- Insertar el registro en inventario_peliculas
+    INSERT INTO inventario_peliculas (pelicula_id, cantidad_disponible)
+    VALUES (NEW.id, cantidad_disponible);
+END$$
+
+DELIMITER ;
+
 INSERT INTO peliculas (titulo, descripcion, poster) VALUES
 ('Interstellar', 'Un equipo de exploradores viaja a través de un agujero de gusano en el espacio.', 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg'),
 ('The Dark Knight', 'Batman se enfrenta al Joker, un criminal caótico que aterroriza Gotham.', 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg'),
