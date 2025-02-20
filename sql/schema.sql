@@ -25,7 +25,7 @@ CREATE TABLE peliculas (
 -- Crear tabla de Inventario de Películas
 CREATE TABLE inventario_peliculas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    pelicula_id INT NOT NULL UNIQUE,  -- Restricción única añadida aquí
+    pelicula_id INT NOT NULL,
     cantidad_disponible INT NOT NULL DEFAULT 1,
     FOREIGN KEY (pelicula_id) REFERENCES peliculas(id) ON DELETE CASCADE
 );
@@ -54,23 +54,6 @@ CREATE TABLE resenas (
     FOREIGN KEY (pelicula_id) REFERENCES peliculas(id) ON DELETE CASCADE
 );
 
-
-DELIMITER $$
-
-CREATE TRIGGER after_peliculas_insert
-AFTER INSERT ON peliculas
-FOR EACH ROW
-BEGIN
-    -- Asignar una cantidad disponible predeterminada (por ejemplo, 2)
-    DECLARE cantidad_disponible INT DEFAULT 2;
-
-    -- Insertar el registro en inventario_peliculas
-    INSERT INTO inventario_peliculas (pelicula_id, cantidad_disponible)
-    VALUES (NEW.id, cantidad_disponible);
-END$$
-
-DELIMITER ;
-
 INSERT INTO peliculas (titulo, descripcion, poster) VALUES
 ('Interstellar', 'Un equipo de exploradores viaja a través de un agujero de gusano en el espacio.', 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg'),
 ('The Dark Knight', 'Batman se enfrenta al Joker, un criminal caótico que aterroriza Gotham.', 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg'),
@@ -84,13 +67,14 @@ INSERT INTO peliculas (titulo, descripcion, poster) VALUES
 ('Coco', 'Un niño viaja a la Tierra de los Muertos en busca de su bisabuelo músico.', 'https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg'),
 ('Toy Story', 'Los juguetes de un niño cobran vida y viven aventuras inolvidables.', 'https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg'),
 ('The Avengers', 'Los héroes más poderosos de la Tierra se unen para enfrentar a Loki.', 'https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg'),
-('Dune', 'Un joven noble enfrenta su destino en un planeta desértico lleno de peligros.', 'https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg');
+('Dune', 'Un joven noble enfrenta su destino en un planeta desértico lleno de peligros.', 'https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg')
+
 -- Películas de Harry Potter
 ('Harry Potter y la cámara secreta', 'Harry regresa a Hogwarts y enfrenta un misterio en la Cámara Secreta.', 'https://image.tmdb.org/t/p/w500/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg'),
 ('Harry Potter y el prisionero de Azkaban', 'Harry descubre la verdad sobre Sirius Black y su pasado.', 'https://image.tmdb.org/t/p/w500/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg'),
 ('Harry Potter y el cáliz de fuego', 'Harry participa en el Torneo de los Tres Magos y enfrenta nuevos peligros.', 'https://image.tmdb.org/t/p/w500/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg'),
 ('Harry Potter y la Orden del Fénix', 'Harry forma un grupo secreto para enseñar defensa contra las artes oscuras.', 'https://image.tmdb.org/t/p/w500/5aOyriWkPec0zUDxmHFP9qMmBaj.jpg'),
-('Harry Potter y el misterio del príncipe', 'Harry descubre más sobre el pasado de Voldemort y busca horrocruxes.', 'https://image.tmdb.org/t/p/w500/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg'),
+('Harry Potter y el misterio del príncipe', 'Harry descubre más sobre el pasado de Voldemort y busca horrocruxes.', 'https://image.tmdb.org/t/p/w500/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg')
 
 -- Películas de El Señor de los Anillos
 ('El Señor de los Anillos: La Comunidad del Anillo', 'Un hobbit emprende un peligroso viaje para destruir un anillo maligno.', 'https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg'),
@@ -103,8 +87,4 @@ INSERT INTO peliculas (titulo, descripcion, poster) VALUES
 ('El Hobbit: La batalla de los cinco ejércitos', 'Las fuerzas de la oscuridad y la luz se enfrentan en una batalla épica.', 'https://image.tmdb.org/t/p/w500/8Qsr8pvDL3s1jNZQ4HK1d1Xlvnh.jpg'),
 
 -- Película de Transformers
-('Transformers: El último caballero', 'Los humanos están en guerra con los Transformers, y la clave para salvar el futuro yace en los secretos del pasado.', 'https://image.tmdb.org/t/p/w500/6TjllWT3cGrPFyqDXurVZ3L8bBi.jpg'),
-
-('Joker', 'Un comediante fracasado se adentra en el mundo del crimen y el caos en la ciudad de Gotham.',
-'https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg'),
-('Spider-Man: No Way Home', 'Peter Parker desenmascara a Spider-Man y solicita la ayuda del Doctor Strange para restaurar su secreto, pero algo sale mal.', 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg');
+('Transformers: El último caballero', 'Los humanos están en guerra con los Transformers, y la clave para salvar el futuro yace en los secretos del pasado.', 'https://image.tmdb.org/t/p/w500/6TjllWT3cGrPFyqDXurVZ3L8bBi.jpg');
