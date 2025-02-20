@@ -3,11 +3,13 @@ let token = localStorage.getItem("token");
 let role = localStorage.getItem("role");
 let username = localStorage.getItem("username");
 
+// Verificar que el archivo se carga correctamente
 console.log("main.js cargado correctamente");
 
+// Configurar el evento DOMContentLoaded para manejar el botón de registro
 document.addEventListener("DOMContentLoaded", () => {
     const registerButton = document.getElementById("register");
-    if(registerButton) {
+    if (registerButton) {
         registerButton.addEventListener("click", register);
     }
 });
